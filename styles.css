@@ -1289,6 +1289,8 @@ section {
         width: 100vw;
         height: 300px;
         top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     
     .film-strip-3d {
@@ -1467,6 +1469,8 @@ section {
         width: 100vw;
         height: 250px;
         top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     
     .film-strip-3d {
@@ -1809,6 +1813,8 @@ html {
     .film-strip-3d-container {
         height: 250px;
         top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     
     .film-frame-3d {
