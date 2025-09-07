@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Birthday, Latifa! 🎉</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Floating Hearts Animation -->
+    <div class="hearts-container">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">🎂 Birthday Special</div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#photos" class="nav-link">Photos</a></li>
+                <li><a href="#wishes" class="nav-link">Wishes</a></li>
+                <li><a href="#surprise" class="nav-link">Surprise</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <!-- 3D Rotating Film Strip -->
+        <div class="film-strip-3d-container">
+            <div class="film-strip-3d" id="filmStrip3D">
+                <!-- Film frames will be dynamically added here -->
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="birthday-cake">
+                <div class="cake">
+                    <div class="candle"></div>
+                    <div class="flame"></div>
+                </div>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Happy Birthday</span>
+                <span class="title-line highlight" id="personalizedName">Latifa!</span>
+            </h1>
+            <p class="hero-subtitle">Another year of friendship, laughter, and amazing memories! 🎈</p>
+            <button class="cta-button" id="celebrationButton">
+                <i class="fas fa-gift"></i> Start the Celebration!
+            </button>
+            
+            <!-- Music Player -->
+            <div class="music-player" id="musicPlayer">
+                <button class="music-btn" id="musicBtn">
+                    <i class="fas fa-music"></i>
+                </button>
+                <div class="music-info" id="musicInfo">
+                    <span class="song-title">The Night We Met</span>
+                    <span class="artist-name">Lord Huron</span>
+                </div>
+                <audio id="backgroundMusic" preload="metadata">
+                    <source src="music/the-night-we-met.mp3" type="audio/mpeg">
+                    <source src="music/the-night-we-met.mp4" type="audio/mp4">
+                    <!-- Fallback: If MP3 doesn't work, try MP4 -->
+                </audio>
+            </div>
+        </div>
+        <div class="floating-elements">
+            <div class="balloon balloon-1">🎈</div>
+            <div class="balloon balloon-2">🎈</div>
+            <div class="balloon balloon-3">🎈</div>
+            <div class="confetti confetti-1"></div>
+            <div class="confetti confetti-2"></div>
+            <div class="confetti confetti-3"></div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section - Automatic Slideshow -->
+    <section id="photos" class="photo-gallery">
+        <div class="container">
+            <div class="slideshow-container">
+                <div class="slideshow-wrapper">
+                    <div class="slide active" id="slide-0">
+                        <!-- Slides will be dynamically loaded here -->
+                    </div>
+                </div>
+                <div class="slideshow-controls">
+                    <button class="slideshow-btn" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slideshow-btn play-pause-btn" id="playPauseBtn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <div class="slide-indicators" id="slideIndicators">
+                        <!-- Indicators will be dynamically created -->
+                    </div>
+                    <button class="slideshow-btn" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="slideshow-info">
+                    <span id="currentSlide">1</span> / <span id="totalSlides">18</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Birthday Wishes Section -->
+    <section id="wishes" class="wishes">
+        <div class="container">
+            <h2 class="section-title">Birthday Wishes ✨</h2>
+            <div class="wishes-grid">
+                <div class="wish-card">
+                    <div class="wish-icon">🎂</div>
+                    <h3>Sweet Dreams</h3>
+                    <p>May all your dreams come true this year and every year after!</p>
+                </div>
+                <div class="wish-card">
+                    <div class="wish-icon">🌟</div>
+                    <h3>Endless Joy</h3>
+                    <p>Wishing you endless joy, laughter, and happiness in everything you do!</p>
+                </div>
+                <div class="wish-card">
+                    <div class="wish-icon">💖</div>
+                    <h3>True Friendship</h3>
+                    <p>Thank you for being the most incredible friend. Our bond means everything to me!</p>
+                </div>
+                <div class="wish-card">
+                    <div class="wish-icon">🎈</div>
+                    <h3>New Adventures</h3>
+                    <p>Here's to new amazing adventure and memories!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Surprise Section -->
+    <section id="surprise" class="surprise">
+        <div class="container">
+            <h2 class="section-title">A Special Surprise! 🎁</h2>
+            <div class="surprise-content">
+                <div class="gift-box" id="giftBox">
+                    <div class="gift-lid"></div>
+                    <div class="gift-body">
+                        <div class="gift-bow"></div>
+                    </div>
+                </div>
+                <p class="surprise-text">Click on the gift box to reveal your surprise!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content">
+            <span class="close-btn" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-img" src="" alt="">
+        </div>
+    </div>
+
+
+    <!-- Surprise Modal -->
+    <div id="surprise-modal" class="surprise-modal">
+        <div class="surprise-modal-content">
+            <span class="close-btn" onclick="closeSurprise()">&times;</span>
+            <h2>🎉 Surprise! 🎉</h2>
+            <p>You are the most amazing person anyone could ask for!</p>
+            <p>Thank you for all the laughter, support, and wonderful memories.</p>
+            <p>Here's to another year of new memories!</p>
+            <div class="surprise-hearts">
+                <span>💕</span>
+                <span>💖</span>
+                <span>💕</span>
+                <span>💖</span>
+                <span>💕</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Made with 💕 for the most amazing person in the world!</p>
+            <p>Happy Birthday! 🎂🎈🎉</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

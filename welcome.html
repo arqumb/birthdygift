@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Your Birthday Surprise! 🎉</title>
+    <link rel="stylesheet" href="welcome-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Floating Hearts Animation -->
+    <div class="hearts-container">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+
+    <!-- Floating Balloons -->
+    <div class="balloons-container">
+        <div class="balloon balloon-1">🎈</div>
+        <div class="balloon balloon-2">🎈</div>
+        <div class="balloon balloon-3">🎈</div>
+        <div class="balloon balloon-4">🎈</div>
+        <div class="balloon balloon-5">🎈</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="welcome-container">
+        <div class="welcome-content">
+            <!-- Birthday Cake Animation -->
+            <div class="birthday-cake">
+                <div class="cake">
+                    <div class="candle"></div>
+                    <div class="flame"></div>
+                </div>
+            </div>
+
+            <!-- Welcome Text -->
+            <h1 class="welcome-title">
+                <span class="title-line">Welcome to Your</span>
+                <span class="title-line highlight">Special Birthday Surprise!</span>
+            </h1>
+            
+            <p class="welcome-subtitle">
+                Someone special has prepared something amazing for you! 🎁
+            </p>
+
+            <!-- Name Input Section -->
+            <div class="name-input-section">
+                <div class="input-container">
+                    <label for="nameInput" class="input-label">
+                        <i class="fas fa-heart"></i> What's your beautiful name?
+                    </label>
+                    <input 
+                        type="text" 
+                        id="nameInput" 
+                        class="name-input" 
+                        placeholder="Type your name here..."
+                        maxlength="20"
+                        autocomplete="off"
+                    >
+                    <div class="input-underline"></div>
+                </div>
+                
+                <button id="enterButton" class="enter-button" onclick="enterCelebration()" disabled>
+                    <i class="fas fa-gift"></i>
+                    <span>Enter the Celebration!</span>
+                </button>
+            </div>
+
+            <!-- Fun Questions Section -->
+            <div class="questions-section">
+                <h3 class="questions-title">Quick Questions to Make It More Special! ✨</h3>
+                
+                <div class="question-item">
+                    <label class="question-label">What's your favorite color?</label>
+                    <select id="favoriteColor" class="question-select">
+                        <option value="">Choose your favorite...</option>
+                        <option value="pink">Pink 💕</option>
+                        <option value="purple">Purple 💜</option>
+                        <option value="blue">Blue 💙</option>
+                        <option value="green">Green 💚</option>
+                        <option value="yellow">Yellow 💛</option>
+                        <option value="red">Red ❤️</option>
+                    </select>
+                </div>
+
+                <div class="question-item">
+                    <label class="question-label">What's your favorite emoji?</label>
+                    <select id="favoriteEmoji" class="question-select">
+                        <option value="">Choose your favorite...</option>
+                        <option value="😊">😊 Happy</option>
+                        <option value="🥰">🥰 Love</option>
+                        <option value="😍">😍 Heart Eyes</option>
+                        <option value="🤗">🤗 Hug</option>
+                        <option value="🎉">🎉 Party</option>
+                        <option value="✨">✨ Sparkles</option>
+                        <option value="🌟">🌟 Star</option>
+                        <option value="💖">💖 Heart</option>
+                    </select>
+                </div>
+
+                <div class="question-item">
+                    <label class="question-label">What makes you happiest?</label>
+                    <select id="happinessSource" class="question-select">
+                        <option value="">Choose what makes you happy...</option>
+                        <option value="friends">Spending time with friends 👭</option>
+                        <option value="family">Family moments 👨‍👩‍👧‍👦</option>
+                        <option value="adventure">Going on adventures 🗺️</option>
+                        <option value="music">Listening to music 🎵</option>
+                        <option value="food">Delicious food 🍕</option>
+                        <option value="movies">Watching movies 🎬</option>
+                        <option value="books">Reading books 📚</option>
+                        <option value="nature">Being in nature 🌸</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Loading Animation (Hidden initially) -->
+            <div id="loadingSection" class="loading-section" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p class="loading-text">Preparing your personalized celebration...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti Container -->
+    <div class="confetti-container"></div>
+
+    <script src="welcome-script.js"></script>
+</body>
+</html>
+
