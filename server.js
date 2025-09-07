@@ -30,6 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Serve static files with proper MIME types
 app.use(express.static(path.join(__dirname), {
+    index: false, // Disable directory indexing
     setHeaders: (res, path) => {
         if (path.endsWith('.js')) {
             res.setHeader('Content-Type', 'application/javascript');
@@ -46,6 +47,8 @@ app.use(express.static(path.join(__dirname), {
         } else if (path.endsWith('.png')) {
             res.setHeader('Content-Type', 'image/png');
         }
+        // Add cache headers for better performance
+        res.setHeader('Cache-Control', 'public, max-age=3600');
     }
 }));
 
@@ -113,6 +116,20 @@ app.get('/health', (req, res) => {
         status: 'OK', 
         timestamp: new Date().toISOString(),
         message: 'Birthday website is running! 🎉'
+    });
+});
+
+// Debug endpoint to check file existence
+app.get('/debug/files', (req, res) => {
+    const fs = require('fs');
+    const files = fs.readdirSync(__dirname);
+    res.json({
+        currentDir: __dirname,
+        files: files,
+        scriptExists: fs.existsSync(path.join(__dirname, 'script.js')),
+        stylesExists: fs.existsSync(path.join(__dirname, 'styles.css')),
+        indexExists: fs.existsSync(path.join(__dirname, 'index.html')),
+        welcomeExists: fs.existsSync(path.join(__dirname, 'welcome.html'))
     });
 });
 
