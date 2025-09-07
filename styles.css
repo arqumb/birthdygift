@@ -1289,8 +1289,8 @@ section {
         width: 100vw;
         height: 300px;
         top: 65%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
     }
     
     .film-strip-3d {
@@ -1469,8 +1469,8 @@ section {
         width: 100vw;
         height: 250px;
         top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
     }
     
     .film-strip-3d {
@@ -1813,8 +1813,8 @@ html {
     .film-strip-3d-container {
         height: 250px;
         top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
     }
     
     .film-frame-3d {
@@ -1954,8 +1954,8 @@ html {
 }
 
 .mobile-device .film-strip-3d-container {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
+    -webkit-transform: translate(-50%, -50%) translateZ(0);
+    transform: translate(-50%, -50%) translateZ(0);
 }
 
 /* Performance optimizations for mobile */
