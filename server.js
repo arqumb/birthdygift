@@ -28,8 +28,47 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files
-app.use(express.static(path.join(__dirname)));
+// Serve static files with proper MIME types
+app.use(express.static(path.join(__dirname), {
+    setHeaders: (res, path) => {
+        if (path.endsWith('.js')) {
+            res.setHeader('Content-Type', 'application/javascript');
+        } else if (path.endsWith('.css')) {
+            res.setHeader('Content-Type', 'text/css');
+        } else if (path.endsWith('.html')) {
+            res.setHeader('Content-Type', 'text/html');
+        } else if (path.endsWith('.mp3')) {
+            res.setHeader('Content-Type', 'audio/mpeg');
+        } else if (path.endsWith('.mp4')) {
+            res.setHeader('Content-Type', 'video/mp4');
+        } else if (path.endsWith('.jpeg') || path.endsWith('.jpg')) {
+            res.setHeader('Content-Type', 'image/jpeg');
+        } else if (path.endsWith('.png')) {
+            res.setHeader('Content-Type', 'image/png');
+        }
+    }
+}));
+
+// Specific routes for main files
+app.get('/script.js', (req, res) => {
+    res.setHeader('Content-Type', 'application/javascript');
+    res.sendFile(path.join(__dirname, 'script.js'));
+});
+
+app.get('/styles.css', (req, res) => {
+    res.setHeader('Content-Type', 'text/css');
+    res.sendFile(path.join(__dirname, 'styles.css'));
+});
+
+app.get('/welcome-script.js', (req, res) => {
+    res.setHeader('Content-Type', 'application/javascript');
+    res.sendFile(path.join(__dirname, 'welcome-script.js'));
+});
+
+app.get('/welcome-styles.css', (req, res) => {
+    res.setHeader('Content-Type', 'text/css');
+    res.sendFile(path.join(__dirname, 'welcome-styles.css'));
+});
 
 // Routes
 app.get('/', (req, res) => {
