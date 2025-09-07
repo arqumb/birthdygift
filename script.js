@@ -34,8 +34,13 @@ function checkUserData() {
             console.log('Error parsing user data:', e);
         }
     } else {
-        // If no user data, redirect to welcome page
-        window.location.href = '/';
+        // If no user data and we're on the celebration page, redirect to welcome
+        if (window.location.pathname === '/celebration' || window.location.pathname === '/index.html') {
+            window.location.href = '/';
+        } else {
+            // If we're already on welcome page, just use default values
+            console.log('No user data found, using default values');
+        }
     }
 }
 

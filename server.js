@@ -87,7 +87,7 @@ app.get('/celebration', (req, res) => {
 });
 
 app.get('/index.html', (req, res) => {
-    // Redirect to welcome page if accessing index.html directly
+    // Redirect to main page if accessing index.html directly
     res.redirect('/');
 });
 
